@@ -1,0 +1,32 @@
+{% extends "base.html" %}{% load static %}
+{% block meta %}{% endblock meta %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "accounts/css/login.css" %}">
+{% endblock css %}
+{% block title %}Sign In{% endblock title %}
+{% block content %}
+    <div class="page-container">
+        <h1 class="page-title">Log In</h1>
+        <div class="form-container">
+            <form action="." method="post" class="login-form">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-field-container">
+                        <label for="{{ field.id }}" class="form-label">{{ field.label }}:</label>
+                        {{ field }}
+                        {% if field.errors %}
+                            <ul class="errors-list">
+                                {% for error in field.errors %}
+                                    <li class="errors-list-item">{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <button type="submut" class="form-submit">Log in</button>
+            </form>
+        </div>
+        <a href="{% url "accounts:register" %}" class="alt-link">Don't have an account, sign up instead!</a>
+    </div>
+{% endblock content %}
+{% block js %}{% endblock js %}

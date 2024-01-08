@@ -1,0 +1,40 @@
+{% extends "base.html" %}{% load static %}
+{% block meta %}{% endblock meta %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "learning_log/css/landing.css" %}">
+{% endblock css %}
+{% block title %}Welcome{% endblock title %}
+{% block content %}
+    <div class="page-container">
+        <p class="landing-paragraph">
+            Welcome to Learning Log, the all round perfect learning progress tracker. 
+            It works great for any new field of interest you chose to pursue. 
+            This is because it will give you all your learning progress on one platform. 
+            You can see the things you did when learning, what you could have done better. 
+            You can evaluate your areas of weakness and know what to improve next time. 
+            You can also use the logs to help others who might be encountering the same problem 
+            since you logged your own solution on the platform.
+        </p>
+        <p class="landing-paragraph">
+            Log in or Sign up to begin using it. 
+            Then, create a new topic by giving it a name. Add entries detailing your learning progress about the 
+            specific topic over a period of time. 
+            You can also edit entries you wish to change, say if you need to correct a mistake or you feel like they 
+            do not correctly describe the learning step. You can also delete the ones you deem irrelevant. 
+            Topics can also be deleted once you are done with them or you do not wish to continue storing 
+            them and their entries anymore.
+        </p>
+        <p class="landing-paragraph">
+            We hope that you enjoy using this platform for all things you learn. If you have any 
+            queries and complaints, please let us know on our social media platforms. Also, if you 
+            happen to have suggestions on how we can improve the platform, please let us know.
+        </p>
+        <p class="landing-paragraph">
+            Do note however that you cannot see other people's topics and entries and they cannot see yours. 
+            Your learning progress is yours and yours alone and cannot be accessed, viewed or modified by a user that 
+            is not you.
+        </p>
+        <p class="landing-paragraph last-paragraph">Happy Logging!</p>
+    </div>
+{% endblock content %}
+{% block js %}{% endblock js %}

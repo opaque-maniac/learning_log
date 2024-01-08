@@ -1,0 +1,83 @@
+.page-container {
+    width: 80%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 10%;
+    margin-right: 10%;
+    min-height: 200px;
+}
+
+/* When topics are available for rendering */
+.topics-available {
+    padding-top: 10px;
+}
+.topic-list-item {
+    display: block;
+    border: 0.5px solid gray;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.topic-list-div {
+    margin: 0%;
+    height: inherit;
+    width: inherit;
+    border-radius: 10px;
+    border: transparent;
+    padding: 0%;
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(187, 180, 142);
+    color: black;
+}
+.topic-list-item:hover {
+    font-size: 102%;
+}
+.topic-list-item .topic-text {
+    font-weight: 700;
+}
+.topics-not-available {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+.no-topics-container p {
+    width: 100%;
+    text-align: center;
+}
+
+/* Media queries */
+/* For mobile */
+@media (min-width: 281px) and (max-width: 480px) {
+    .topic-list-div {
+        display: grid;
+        grid-template-areas: "topic-title topic-title topic-title"
+                            "topic-date topic-date topic-date";
+    }
+    .topic-text {
+        grid-area: topic-title;
+    }
+    .topic-date {
+        grid-area: topic-date;
+    }
+    .topic-list-item:hover {
+        font-size: unset;
+    }
+    .page-container {
+        min-height: 500px;
+    }
+}
+
+/* For tablet and ipad potrait */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/* For mobile */
+@media (min-width: 281px) and (max-width: 480px) {
+    
+}

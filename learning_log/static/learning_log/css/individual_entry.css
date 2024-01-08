@@ -1,0 +1,55 @@
+.page-container {
+    min-height: 200px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 15px;
+}
+.page-title, .entry-date, .entry-author {
+    width: 100%;
+    text-align: center;
+}
+span {
+    font-weight: 700;
+}
+.edit-links-container {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 15px;
+}
+.edit-link:visited {
+    color: blue;
+}
+.entry-container {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0%;
+}
+.entry-container p {
+    text-align: center;
+}
+
+
+/* Media queries */
+/* For mobile */
+@media (min-width: 281px) and (max-width: 480px) {
+    .page-container {
+        min-height: 500px;
+    }
+    .entry-container {
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+
+/* For tablet and ipad potrait */
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+/* For mobile */
+@media (min-width: 281px) and (max-width: 480px) {
+    
+}

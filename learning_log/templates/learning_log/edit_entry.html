@@ -1,0 +1,33 @@
+{% extends "base.html" %}{% load static %}
+{% block meta %}{% endblock meta %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "learning_log/css/edit_entry.css" %}">
+{% endblock css %}
+{% block title %}New Entry{% endblock title %}
+{% block content %}
+    <div class="page-container">
+        <h1 class="page-title">Edit Entry</h1>
+        <p class="topic-text">Topic: <span>{{ topic.text }}</span></p>
+        <div class="form-container">
+            <form action="." method="post" class="entry-form">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-field-container">
+                        <label for="{{ field.id }}" class="form-label">{{ field.label }}:</label>
+                        {{ field }}
+                        {% if field.errors %}
+                            <ul class="errors-list">
+                                {% for error in field.errors %}
+                                    <li class="errors-list-item">{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <button type="submut" class="form-submit">Submit</button>
+            </form>
+        </div>
+        <a href="{% url 'learning_log:individual_entry' entry_id %}" class="alt-link">Go back to entry!</a>
+    </div>
+{% endblock content %}
+{% block js %}{% endblock js %}

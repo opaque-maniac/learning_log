@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% load static %}
+{% block meta %}{% endblock meta %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "learning_log/css/home.css" %}">
+{% endblock css %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+    {% if topics %}
+        <div class="page-container topics-available">
+            {% for topic in topics %}
+                <a href="{% url 'learning_log:individual_topic' topic.id %}" class="topic-list-item">
+                    <div class="topic-list-div">
+                        <p class="topic-text">{{ topic.text }}</p>
+                        <p class="topic-date">Date created: <span>{{ topic.created_at }}</span></p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="page-container topics-not-available">
+            <div class="no-topics-container">
+                <p class="no-topic-text">No topics have been created yet!</p>
+                <p class="no-topic-text">Create a new one to start!</p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}
+{% block js %}{% endblock js %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}{% load static %}
+{% block meta %}{% endblock meta %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "learning_log/css/new_topic.css" %}">
+{% endblock css %}
+{% block title %}New Topic{% endblock title %}
+{% block content %}
+    <div class="page-container">
+        <h1 class="page-title">New Topic</h1>
+        <div class="form-container">
+            <form action="." method="post" class="topic-form">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-field-container">
+                        <label for="{{ field.id }}" class="form-label">{{ field.label }}:</label>
+                        {{ field }}
+                        {% if field.errors %}
+                            <ul class="errors-list">
+                                {% for error in field.errors %}
+                                    <li class="errors-list-item">{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <button type="submut" class="form-submit">Submit</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+{% block js %}{% endblock js %}

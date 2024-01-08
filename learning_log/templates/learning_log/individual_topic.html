@@ -1,0 +1,37 @@
+{% extends "base.html" %}{% load static %}
+{% block meta %}{% endblock meta %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "learning_log/css/individual_topic.css" %}">
+{% endblock css %}
+{% block title %}{{ topic.text }}{% endblock title %}
+{% block content %}
+    <div class="page-container">
+        <h1 class="topic-text">Topic: <span>{{ topic.text }}</span></h1>
+        <p class="topic-date">Date created: <span>{{ topic.created_at }}</span></p>
+        <p class="topic-author">Created by: <span>{{ topic.author.first_name }} {{ topic.author.last_name }}</span></p>
+        <div class="topic-link-container">
+            <a href="{% url 'learning_log:new_entry' topic.id %}" class="individal-topic-link">Add entry</a>
+            <a href="{% url 'learning_log:delete_topic' topic.id %}" class="individal-topic-link">Delete topic</a>
+        </div>
+        <div class="entries-container">
+            {% for entry in entries %}
+                <a href="{% url 'learning_log:individual_entry' entry.id %}" class="entry-item">
+                    <div class="entry-item-div">
+                        <div class="entry-text-container">
+                            <p class="entry-text">{{ entry }}...<p>
+                            <p class="entry-date">Date created: <span>{{ entry.created_at }}</span></p>
+                        </div>
+                    </div>
+                </a>
+            {% empty %}
+            <div class="no-entry-container">
+                <div class="no-entry-div">
+                    <p class="no-topic-text">No entries have been created for this topic!</p>
+                    <p class="no-topic-text">Create a new one to start logging!</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
+{% block js %}{% endblock js %}

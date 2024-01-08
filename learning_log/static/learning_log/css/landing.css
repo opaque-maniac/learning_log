@@ -1,0 +1,18 @@
+.page-container {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.landing-paragraph {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 110%;
+}
+/* Media queries */
+/* For mobile */
+@media (min-width: 281px) and (max-width: 480px) {
+    .page-container {
+        min-height: 300px;
+    }
+}

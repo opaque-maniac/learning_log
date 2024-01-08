@@ -1,0 +1,21 @@
+{% extends "base.html" %}{% load static %}
+{% block meta %}{% endblock meta %}
+{% block css %}
+    <link rel="stylesheet" href="{% static "learning_log/css/individual_entry.css" %}">
+{% endblock css %}
+{% block title %}Entry {{ entry.id }}{% endblock title %}
+{% block content %}
+    <div class="page-container">
+        <h1 class="page-title">Entry for: <span>{{ entry.topic.text }}</span></h1>
+        <p class="entry-date">Date created: <span>{{ entry.created_at }}</p>
+        <p class="entry-author">Created by: <span>{{ entry.topic.author.first_name }} {{ entry.topic.author.first_name }}</span></p>
+        <div class="edit-links-container">
+            <a href="{% url 'learning_log:edit_entry' entry.id %}" class="edit-link">Edit entry</a>
+            <a href="{% url 'learning_log:delete_entry' entry.id %}" class="edit-link">Delete entry</a>
+        </div>
+        <div class="entry-container">
+            <p class="entry-text">{{ entry.text }}</p>
+        </div>
+    </div>
+{% endblock content %}
+{% block js %}{% endblock js %}

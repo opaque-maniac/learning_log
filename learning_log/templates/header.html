@@ -1,0 +1,25 @@
+<header class="header">{% load static %}
+    {% if request.user.is_authenticated %}
+        <div class="header-container header-not-authenticated">
+            <h1 class="brand-name brand-not-authenticated">
+                <a href="{% url 'learning_log:home' %}">Learning Log</a>
+            </h1>
+        </div>
+
+        <nav class="navbar">
+            <a href="{% url 'learning_log:home' %}" class="nav-link">Home</a>
+            <a href="{% url 'learning_log:new_topic' %}" class="nav-link">New Topic</a>
+        </nav>
+    {% else %}
+        <div class="header-container header-not-authenticated">
+            <h1 class="brand-name brand-not-authenticated">
+                <a href="{% url 'learning_log:landing' %}">Learning Log</a>
+            </h1>
+        </div>
+
+        <nav class="navbar">
+            <a href="{% url 'accounts:register' %}" class="nav-link">Sign up</a>
+            <a href="{% url 'accounts:login' %}" class="nav-link">Log in</a>
+        </nav>
+    {% endif %}
+</header>

@@ -1,0 +1,80 @@
+.page-container {
+    min-height: 200px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 15px;
+}
+.topic-text, .topic-date, .topic-author {
+    width: 100%;
+    text-align: center;
+}
+.delete-form {
+    width: 100%;
+}
+.page-container span {
+    font-weight: 700;
+}
+.warning-text {
+    width: 100%;
+    text-align: center;
+}
+.form-submit {
+    width: 20%;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 40%;
+    margin-right: 40%;
+    border-radius: 10px;
+    border-width: 0.5px;
+    font-size: 17px;
+}
+.form-submit:hover {
+    font-size: 105%;
+}
+.form-submit:active {
+    font-size: 95%;
+}
+.entry-text-container {
+    width: 100%;
+}
+.entry-text-container p {
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Media queries */
+/* For mobile */
+@media (min-width: 281px) and (max-width: 480px) {
+    .page-container {
+        min-height: 500px;
+    }
+    .form-submit {
+        width: 60%;
+        height: 30px;
+        margin-top: 15px;
+        margin-left: 20%;
+        margin-right: 20%;
+        border-radius: 10px;
+        border-width: 0.5px;
+    }
+    .entry-text-container {
+        padding: 0%;
+        margin: 0%;
+    }
+    .entry-text-container p {
+        margin: 0%;
+        padding: 0%;
+    }
+}
+
+/* For tablet and ipad potrait */
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+/* For mobile */
+@media (min-width: 281px) and (max-width: 480px) {
+    
+}

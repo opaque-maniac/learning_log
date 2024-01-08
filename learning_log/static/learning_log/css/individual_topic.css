@@ -1,0 +1,123 @@
+.page-container {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.topic-link-container {
+    margin-bottom: 20px;
+    padding: 0%;
+    display: flex;
+    justify-content: space-around;
+}
+.topic-text span {
+    font-style: italic;
+}
+.topic-date span, .topic-author span {
+    font-weight: 700;
+}
+.topic-text, .topic-date, .topic-author {
+    text-align: center;
+}
+.entry-item {
+    display: block;
+    border: 0.5px solid red;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 60px;
+    margin-bottom: 15px;
+    border: transparent;
+    border-radius: 10px;
+    height: 70px;
+}
+.entry-item:last-of-type {
+    margin-bottom: 10px;
+}
+.entries-container {
+    padding-bottom: 10px;
+}
+.entries-container a {
+    text-decoration: none;
+    color: black;
+}
+.entries-container a:hover {
+    font-size: 102%;
+}
+.entry-item-div {
+    background-color: rgb(187, 180, 142);
+    border-radius: 10px;
+    border-width: 1px;
+    height: inherit;
+    margin: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topic-link-container a:visited {
+    color: blue;
+}
+.entry-text-container {
+    margin: 0%;
+    padding: 0%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.entry-date {
+    font-weight: 700;
+}
+.entry-text-container span {
+    font-style: italic;
+}
+.no-entry-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0%;
+}
+.no-entry-div {
+    padding: 0%;
+    margin: 0%;
+}
+.no-entry-div p {
+    text-align: center;
+}
+
+
+/* Media queries */
+/* For mobile */
+@media (min-width: 281px) and (max-width: 480px) {
+    .page-container {
+        min-height: 500px;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    .entry-item {
+        display: block;
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    .entry-item-div {
+        justify-content: start;
+        padding-left: 10px;
+    }
+    .topic-list-item {
+        height: 60px;
+    }
+    .entry-text-container p {
+       margin-top: 5px;
+       margin-bottom: 5px;
+    }
+}
+
+/* For tablet and ipad potrait */
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+/* For mobile */
+@media (min-width: 281px) and (max-width: 480px) {
+    
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block meta %}{% endblock meta %}
+    <link rel="stylesheet" href="{% static "learning_log/css/base.css" %}">
+    {% block css %}{% endblock css %}
+    <title>{% block title %}{% endblock title %} | Learning Log</title>
+</head>
+<body>
+    {% include "header.html" %}
+    <div class="main-container">
+        {% block content %}{% endblock content %}
+    </div>
+    {% include "footer.html" %}
+    {% block js %}{% endblock js %}
+</body>
+</html>

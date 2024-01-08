@@ -1,0 +1,87 @@
+{% if request.user.is_authenticated %}{% load static %}
+    <footer class="footer-authenticated">
+        <div class="footer-container footer-left">
+            <h2 class="footer-title" id="contact-title">Contact us:</h2>
+            <form action="#" method="post" class="footer-form">
+                <div class="footer-field-container">
+                    <label for="footer-email" class="footer-label">Email:</label>
+                    <input type="email" id="footer-email" class="footer-field" placeholder="Enter your email...">
+                </div>
+                <div class="space"></div>
+                <div class="footer-field-container">
+                    <label for="footer-message" class="footer-label">Message:</label>
+                    <textarea class="footer-field" name="footer-message" class="footer-field" id="footer-message" cols="30" rows="3" placeholder="Enter your message.."></textarea>
+                </div>
+                <button type="submit" class="footer-submit">Send</button>
+            </form>
+        </div>
+        <div class="footer-container footer-right">
+            <h2 class="footer-title">Visit our pages:</h2>
+            <a href="#" target="_blank" class="footer-link">
+                <img class="link-icon" src="{% static "learning_log/img/facebook.svg" %}" alt="">
+                <p class="footer-link-text">Facebook</p>
+            </a>
+            <a href="#" target="_blank" class="footer-link">
+                <img class="link-icon" src="{% static "learning_log/img/instagram.svg" %}" alt="">
+                <p class="footer-link-text">Instagram</p>
+            </a>
+            <a href="#" target="_blank" class="footer-link">
+                <img class="link-icon" src="{% static "learning_log/img/twitterx.svg" %}" alt="">
+                <p class="footer-link-text">Twitter</p>
+            </a>
+            <a href="#" target="_blank" class="footer-link">
+                <img class="link-icon" src="{% static "learning_log/img/linkedin.svg" %}" alt="">
+                <p class="footer-link-text">LinkedIn</p>
+            </a>
+            <a href="tel:+254707240764" target="_blank" class="footer-link">
+                <img class="link-icon" src="{% static "learning_log/img/phone.svg" %}" alt="">
+                <p class="footer-link-text">Phone</p>
+            </a>
+        </div>
+        <div class="auth-details-container footer-container">
+            <p class="user-greeting">Hello <span>{{ request.user.first_name }} {{ request.user.last_name }}</span></p>
+            <a href="{% url 'accounts:logout' %}" id="logout-link" class="nav-link">Log out</a>
+        </div>
+    </footer>
+{% else %}
+    <footer class="footer">
+        <div class="footer-container footer-left">
+            <h2 class="footer-title" id="contact-title">Contact us:</h2>
+            <form action="#" method="post" class="footer-form">
+                <div class="footer-field-container">
+                    <label for="footer-email" class="footer-label">Email</label>
+                    <input type="email" id="footer-email" class="footer-field" placeholder="Enter your email...">
+                </div>
+                <div class="space"></div>
+                <div class="footer-field-container">
+                    <label for="footer-message" class="footer-label">Message</label>
+                    <textarea class="footer-field" name="footer-message" class="footer-field" id="footer-message" cols="30" rows="3" placeholder="Enter your message.."></textarea>
+                </div>
+                <button type="submit" class="footer-submit">Send</button>
+            </form>
+        </div>
+        <div class="footer-container footer-right">
+            <h2 class="footer-title">Visit our pages:</h2>
+            <a href="#" target="_blank" class="footer-link">
+                <img class="link-icon" src="{% static "learning_log/img/facebook.svg" %}" alt="">
+                <p class="footer-link-text">Facebook</p>
+            </a>
+            <a href="#" target="_blank" class="footer-link">
+                <img class="link-icon" src="{% static "learning_log/img/instagram.svg" %}" alt="">
+                <p class="footer-link-text">Instagram</p>
+            </a>
+            <a href="#" target="_blank" class="footer-link">
+                <img class="link-icon" src="{% static "learning_log/img/twitterx.svg" %}" alt="">
+                <p class="footer-link-text">Twitter</p>
+            </a>
+            <a href="#" target="_blank" class="footer-link">
+                <img class="link-icon" src="{% static "learning_log/img/linkedin.svg" %}" alt="">
+                <p class="footer-link-text">LinkedIn</p>
+            </a>
+            <a href="tel:+254707240764" target="_blank" class="footer-link">
+                <img class="link-icon" src="{% static "learning_log/img/phone.svg" %}" alt="">
+                <p class="footer-link-text">Phone</p>
+            </a>
+        </div>
+    </footer>
+{% endif %}
