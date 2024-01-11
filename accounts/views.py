@@ -11,7 +11,7 @@ def register_view(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(authenticate(request, user))
+            login(request, authenticate(user))
             return redirect(reverse('learning_log:home'))
     else:
         form = RegisterForm()
