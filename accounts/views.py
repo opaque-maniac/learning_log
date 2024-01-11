@@ -10,8 +10,11 @@ def register_view(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, authenticate(user))
+            form.save()
+            email = form.cleaned_data.get('email')
+            pasword = form.cleaned_data.get('password1')
+            user = authenticate(email=email, password=pasword)
+            login(request, user=user)
             return redirect(reverse('learning_log:home'))
     else:
         form = RegisterForm()

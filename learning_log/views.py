@@ -15,7 +15,7 @@ def landing(request):
 # View for the home page
 @login_required
 def home(request):
-    topics = Topic.objects.all()
+    topics = Topic.objects.filter(author=request.user)
     return render(request, 'learning_log/home.html', {
         'topics': topics
     })
